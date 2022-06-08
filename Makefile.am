@@ -62,4 +62,4 @@ include $(top_srcdir)/tests/unit-tests/Makefile.subdir
 # margo.h are resolved correctly. This is only relevant for other packages
 # that use libtool.
 install-exec-hook:
-	sed -i -e "s+inherited_linker_flags=''+inherited_linker_flags='-Wl,-rpath=@MERCURY_LIB_PATH@'+" $(DESTDIR)$(libdir)/libmargo.la
+	sed -i -e "s|inherited_linker_flags=''|inherited_linker_flags='-Wl,-rpath=@MERCURY_LIB_PATH@'|" $(DESTDIR)$(libdir)/libmargo.la
